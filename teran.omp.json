@@ -1,0 +1,194 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "blocks": [
+        {
+            "alignment": "left",
+            "segments": [
+                {
+                    "foreground": "white",
+                    "foreground_templates": [
+                        "{{ if gt .Code 0 }}red{{ end }}"
+                    ],
+                    "properties": {
+                        "template": "\u256d\u2500"
+                    },
+                    "style": "plain",
+                    "type": "text"
+                },
+                {
+                    "foreground": "green",
+                    "properties": {
+                        "template": "{{ .UserName }}"
+                    },
+                    "style": "plain",
+                    "type": "session"
+                },
+                {
+                    "foreground": "darkGray",
+                    "properties": {
+                        "template": " at "
+                    },
+                    "style": "plain",
+                    "type": "text"
+                },
+                {
+                    "foreground": "cyan",
+                    "properties": {
+                      "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
+                      "macos": "mac"
+                    },
+                    "style": "plain",
+                    "type": "os"
+                },
+                {
+                    "foreground": "cyan",
+                    "properties": {
+                        "template": "{{ .HostName }}"
+                    },
+                    "style": "plain",
+                    "type": "session"
+                },
+                {
+                    "foreground": "darkGray",
+                    "properties": {
+                        "template": " in "
+                    },
+                    "style": "plain",
+                    "type": "text"
+                },
+                {
+                    "foreground": "yellow",
+                    "properties": {
+                        "style": "full",
+                        "template": "{{ .Path }}"
+                    },
+                    "style": "plain",
+                    "type": "path"
+                },
+                {
+                    "foreground": "darkGray",
+                    "properties": {
+                        "template": " on "
+                    },
+                    "style": "plain",
+                    "type": "git"
+                },
+                {
+                    "foreground": "red",
+                    "properties": {
+                        "fetch_status": true,
+                        "template": "{{ .HEAD }}{{ if and (not .Staging.Changed) (not .Working.Changed) }} \uf00c{{end}}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}"
+                    },
+                    "style": "plain",
+                    "type": "git"
+                }
+            ],
+            "type": "prompt"
+        },
+        {
+            "alignment": "right",
+            "segments": [
+                {
+                    "foreground": "black",
+                    "background": "#ffff66",
+                    "leading_diamond": "\ue0b6",
+                    "properties": {
+                      "template": "\uF0E7"
+                    },
+                    "trailing_diamond": "\ue0b4",
+                    "style": "diamond",
+                    "type": "root"
+                },
+                {
+                    "foreground": "black",
+                    "background": "red",
+                    "leading_diamond": "\ue0b6",
+                    "properties": {
+                      "template": "{{ .Code }}"
+                    },
+                    "trailing_diamond": "\ue0b4",
+                    "style": "diamond",
+                    "type": "exit"
+                },
+                {
+                    "foreground": "black",
+                    "background": "#04bebe",
+                    "leading_diamond": "\ue0b6",
+                    "properties": {
+                      "template": " \uE77F {{ .Full }} "
+                    },
+                    "trailing_diamond": "\ue0b4",
+                    "style": "diamond",
+                    "type": "dotnet"
+                },
+                {
+                    "foreground": "black",
+                    "background": "#6CA35E",
+                    "leading_diamond": "\ue0b6",
+                    "properties": {
+                      "template": " \uE718 {{ .Full }} "
+                    },
+                    "trailing_diamond": "\ue0b4",
+                    "style": "diamond",
+                    "type": "node"
+                },
+                {
+                    "foreground": "#100e23",
+                    "background": "#906cff",
+                    "leading_diamond": "\ue0b6",
+                    "properties": {
+                      "template": " \uE235 {{ .Full }} "
+                    },
+                    "trailing_diamond": "\ue0b4",
+                    "style": "diamond",
+                    "type": "python"
+                },
+                {
+                    "foreground": "#ffffff",
+                    "background": "#4063D8",
+                    "leading_diamond": "\ue0b6",
+                    "properties": {
+                      "template": " \uE738 {{ .Full }}"
+                    },
+                    "trailing_diamond": "\ue0b4",
+                    "style": "diamond",
+                    "type": "java"
+                },
+                {
+                    "foreground": "black",
+                    "background": "red",
+                    "leading_diamond": "\ue0b6",
+                    "properties": {
+                        "template": "{{ if and (not .Error) (lt .Percentage 15) }} \uf243  {{ end }}{{ .Error }}"
+                    },
+                    "trailing_diamond": "\ue0b4",
+                    "style": "diamond",
+                    "type": "battery"
+                }
+            ],
+            "type": "prompt"
+        },
+        {
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "foreground": "white",
+                    "foreground_templates": [
+                        "{{ if gt .Code 0 }}red{{ end }}"
+                    ],
+                    "properties": {
+                        "template": "\u2570\u2500{{ if .Root }} \uF0E7 {{ else }}⠠⠵ {{ end }}"
+                    },
+                    "style": "plain",
+                    "type": "text"
+                }
+            ],
+            "type": "prompt"
+        }
+    ],
+    "console_title": true,
+    "console_title_style": "template",
+    "console_title_template": "{{if .Root}}(root) {{end}}{{.Folder}}",
+    "version": 1
+}
