@@ -34,7 +34,7 @@
                 {
                     "foreground": "cyan",
                     "properties": {
-                      "template": "{{ if .WSL }}WSL at {{ end }}{{ .Icon }} "
+                      "template": "{{ .Icon }} "
                     },
                     "style": "plain",
                     "type": "os"
