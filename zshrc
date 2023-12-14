@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
-export ZSH="~/.oh-my-zsh"
-export PATH=$PATH:~/.toolbox/bin
+export ZSH="/Users/teranpe/.oh-my-zsh"
+export PATH=$PATH:/Users/teranpe/.toolbox/bin
 
 # ZSH_THEME="fino-time"
 eval "$(oh-my-posh --init --shell zsh --config teran.omp.json)"
@@ -34,8 +34,11 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export MANPATH="/usr/local/man:$MANPATH"
 
-# Fix homebrew proxy go use
+# Fix homebrew go proxy
 export HOMEBREW_GOPROXY=direct
+
+# Override hostname
+# export POSH_NAME=Hostname
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
